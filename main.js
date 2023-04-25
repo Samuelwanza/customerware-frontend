@@ -68,52 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function predictChurn(data) {
   try {
-    const sam = {
-      Contract: ["One year"],
-      Dependents: ["No"],
-      DeviceProtection: ["No"],
-      InternetService: ["No"],
-      MonthlyCharges: [123],
-      MultipleLines: ["No"],
-      OnlineBackup: ["No"],
-      OnlineSecurity: ["No"],
-      PaperlessBilling: ["No"],
-      Partner: ["No"],
-      PaymentMethod: ["Electronic check"],
-      PhoneService: ["No"],
-      SeniorCitizen: ["No"],
-      StreamingMovies: ["No"],
-      StreamingTV: ["No"],
-      TechSupport: ["No"],
-      TotalCharges: [1234],
-      gender: ["Male"],
-      tenure: [12],
-    };
-
-    const sams = {
-      Contract: ["One year"],
-      Dependents: ["No"],
-      DeviceProtection: ["No"],
-      InternetService: ["DSL"],
-      MonthlyCharges: [58.35],
-      MultipleLines: ["Yes"],
-      OnlineBackup: ["No"],
-      OnlineSecurity: ["Yes"],
-      PaperlessBilling: ["Yes"],
-      Partner: ["Yes"],
-      PaymentMethod: ["Electronic check"],
-      PhoneService: ["Yes"],
-      SeniorCitizen: [0],
-      StreamingMovies: ["No"],
-      StreamingTV: ["No"],
-      TechSupport: ["Yes"],
-      TotalCharges: [1346.9],
-      gender: ["Male"],
-      tenure: [24],
-    };
-
-    console.log(sams, "How it looks before");
-    console.log(JSON.stringify(data), "After it has been stringified");
     const res = await fetch(
       "https://web-production-ffc5.up.railway.app/predict_churn",
       {
@@ -128,27 +82,10 @@ async function predictChurn(data) {
       .then((data) => data.prediction);
     console.log(res);
 
-    //const res = aw/ait fetch("https://flask-production-9868.up.railway.app");
-    //console.log(res);
-    // const response = await fetch(
-    //   "https://flask-production-9868.up.railway.app/predict_churn",
-    //   {
-    //     method: "POST",
-
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(sams),
-    //   }
-    // ).then((res) => res.json());
-
-    //const json = await response.json();
-    //console.log(response, "The jeson response");
-
     return res;
   } catch (error) {
     console.log("The error", error);
-    return error.stack;
+    return "Server is down";
   }
 }
 function displayPrediction(prediction) {

@@ -1,243 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header>
-            <nav>
-                <!-- <a href="" class="logo">CustomerWare</a> -->
-                <img src="images/logo.png" alt="logo" class="logo">
-                <input type="checkbox" id="menu-toggle">
-                <label for="menu-toggle" class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-                <div class="nav-menu">
-                    <ul>
-                        <li><a href="#" id="rerun">Rerun</a></li>
-                        <li><a href="#" id="settings">Settings</a></li>
-                        <li><a href="#" id="print">Print</a></li>
-                        <li><a href="#" id="screenshot">Screenshot</a></li>
-                        <li><a href="#" id="about">About</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <form id="churn-form">
-                <h1>Customer Churn Prediction</h1>
-                <!-- Question 1 -->
-                <form>
-                    <div class="form-group">
-                      <label for="contract">What is the customers contract with the company:</label>
-                      <select class="form-control" id="contract">
-                        <option>One year</option>
-                        <option>Two years</option>
-                        <option>Month-to-month</option>
-                      </select>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="dependents">Does the customer have Dependents:</label>
-                      <select class="form-control" id="dependents">
-                        <option>No</option>
-                        <option>Yes</option>
-                      </select>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="internetService">What type of internet service does the customer have:</label>
-                      <select class="form-control" id="internetService">
-                        <option>No</option>
-                        <option>Yes</option>
-                        <option>No internet service</option>
-                      </select>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="connectionType">What type of connection does the customer have:</label>
-                      <select class="form-control" id="connectionType">
-                        <option>DSL</option>
-                        <option>Fiber optics</option>
-                        <option>No</option>
-                      </select>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="monthlyCharges">What are the customers monthly charges:</label>
-                      <input type="number" class="form-control" id="monthlyCharges" placeholder="Enter monthly charges">
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="multipleLines">Does the customer have multiple Lines:</label>
-                      <select class="form-control" id="multipleLines">
-                        <option>No</option>
-                        <option>Yes</option>
-                        <option>No phone services</option>
-                      </select>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="onlineBackup">Does the customer have an online backup:</label>
-                      <select class="form-control" id="onlineBackup">
-                        <option>No</option>
-                        <option>Yes</option>
-                        <option>No internet service</option>
-                      </select>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="onlineSecurity">Does the customer have online security:</label>
-                      <select class="form-control" id="onlineSecurity">
-                        <option>No</option>
-                        <option>Yes</option>
-                        <option>No internet service</option>
-                      </select>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="paperlessBilling">Does the customer use Paperless Billing:</label>
-                      <select class="form-control" id="paperlessBilling">
-                        <option>No</option>
-                        <option>Yes</option>
-                      </select>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="partner">Does the customer have a partner:</label>
-                      <select class="form-control" id="partner">
-                        <option>No</option>
-                        <option>Yes</option>
-                      </select>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="paymentMethod">What is the customer's preferred payment method:</label>
-                      <select class="form-control" id="paymentMethod">
-                        <option>Electronic check</option>
-                        <option>Credit card (automatic)</option>
-                        <option>Mailed check</option>
-                        <option>Bank transfer</option>
-                      </select></div>
-                    
-                      <div class="form-group">
-                        <label for="phoneService">Does the customer have a phone service:</label>
-                        <select class="form-control" id="phoneService">
-                          <option>No</option>
-                          <option>Yes</option>
-                        </select>
-                      </div>
-                    
-                      <div class="form-group">
-                        <label for="seniorCitizen">Is the customer a senior Citizen:</label>
-                        <select class="form-control" id="seniorCitizen">
-                          <option>No</option>
-                          <option>Yes</option>
-                        </select>
-                      </div>
-                    
-                      <div class="form-group">
-                        <label for="streamMovies">Does the customer stream movies:</label>
-                        <select class="form-control" id="streamMovies">
-                          <option>No</option>
-                          <option>Yes</option>
-                          <option>No internet service</option>
-                        </select>
-                      </div>
-                    
-                      <div class="form-group">
-                        <label for="streamTV">Does the customer stream TV:</label>
-                        <select class="form-control" id="streamTV">
-                          <option>No</option>
-                          <option>Yes</option>
-                          <option>No internet service</option>
-                        </select>
-                      </div>
-                    
-                      <div class="form-group">
-                        <label for="techSupport">Does the customer require Tech Support:</label>
-                        <select class="form-control" id="techSupport">
-                          <option>No</option>
-                          <option>Yes</option>
-                          <option>No internet service</option>
-                        </select>
-                      </div>
-                    
-                      <div class="form-group">
-                        <label for="deviceProtection">Does the customer require device protection:</label>
-                        <select class="form-control" id="deviceProtection">
-                          <option>No</option>
-                          <option>Yes</option>
-                          <option>No internet service</option>
-                        </select>
-                      </div>
-                    
-                      <div class="form-group">
-                        <label for="totalCharges">What are the customer's total charges, so far:</label>
-                        <input type="number" class="form-control" id="totalCharges" placeholder="Enter total charges">
-                      </div>
-                    
-                      <div class="form-group">
-                        <label for="gender">Customer's gender:</label>
-                        <select class="form-control" id="gender">
-                          <option>Male</option>
-                          <option>Female</option>
-                        </select>
-                      </div>
-                    
-                      <div class="form-group">
-                        <label for="tenure">For how many months has the customer been active:</label>
-                        <input type="number" class="form-control" id="tenure" placeholder="Enter number of months">
-                      </div>
-                       <button type="submit" class="btn-submit">Predict</button>
-                    </form>                    
-                
-            <!-- Settings Dialog -->
-            <div id="settings-dialog" class="dialog hidden">
-                <div class="dialog-content">
-                    <h3>Theme</h3>
-                    <button id="dark-theme">Dark</button>
-                    <button id="light-theme">Light</button>
-                    <button id="settings-close">Close</button>
-                </div>
+      <header>
+        <nav>
+          <!-- <a href="" class="logo">CustomerWare</a> -->
+          <img src="images/logo.png" alt="logo" class="logo" />
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <div class="nav-menu">
+            <ul>
+              <li><a href="#" id="rerun">Rerun</a></li>
+              <li><a href="#" id="settings">Settings</a></li>
+              <li><a href="#" id="print">Print</a></li>
+              <li><a href="#" id="screenshot">Screenshot</a></li>
+              <li><a href="#" id="about">About</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <form id="churn-form">
+          <h1>Customer Churn Prediction</h1>
+          <!-- Question 1 -->
+          <form>
+            <div class="form-group">
+              <label for="contract"
+                >What is the customers contract with the company:</label
+              >
+              <select class="form-control" id="contract">
+                <option>One year</option>
+                <option>Two years</option>
+                <option>Month-to-month</option>
+              </select>
             </div>
 
-            <!-- About Dialog -->
-            <div id="about-dialog" class="dialog hidden">
-                <div class="dialog-content">
-                    <h3>About CustomWare</h3>
-                    <p>CustomWare is an AI-powered customer churn prediction application. It uses a machine learning
-                        model to predict customer churn based on various features. This helps businesses to proactively
-                        retain their customers and improve their services.</p>
-                    <button id="about-close">Close</button>
-                </div>
+            <div class="form-group">
+              <label for="dependents">Does the customer have Dependents:</label>
+              <select class="form-control" id="dependents">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
             </div>
 
-            <!-- Error Dialog -->
-            <div id="error-dialog" class="dialog hidden">
-                <div class="dialog-content">
-                    <h3>Error</h3>
-                    <p id="error-message"></p>
-                    <button id="error-close">Close</button>
-                </div>
+            <div class="form-group">
+              <label for="internetService"
+                >What type of internet service does the customer have:</label
+              >
+              <select class="form-control" id="internetService">
+                <option>No</option>
+                <option>Yes</option>
+                <option>No internet service</option>
+              </select>
             </div>
 
-        </main>
+            <div class="form-group">
+              <label for="connectionType"
+                >What type of connection does the customer have:</label
+              >
+              <select class="form-control" id="connectionType">
+                <option>DSL</option>
+                <option>Fiber optics</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="monthlyCharges"
+                >What are the customers monthly charges:</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="monthlyCharges"
+                placeholder="Enter monthly charges"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="multipleLines"
+                >Does the customer have multiple Lines:</label
+              >
+              <select class="form-control" id="multipleLines">
+                <option>No</option>
+                <option>Yes</option>
+                <option>No phone services</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="onlineBackup"
+                >Does the customer have an online backup:</label
+              >
+              <select class="form-control" id="onlineBackup">
+                <option>No</option>
+                <option>Yes</option>
+                <option>No internet service</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="onlineSecurity"
+                >Does the customer have online security:</label
+              >
+              <select class="form-control" id="onlineSecurity">
+                <option>No</option>
+                <option>Yes</option>
+                <option>No internet service</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="paperlessBilling"
+                >Does the customer use Paperless Billing:</label
+              >
+              <select class="form-control" id="paperlessBilling">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="partner">Does the customer have a partner:</label>
+              <select class="form-control" id="partner">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="paymentMethod"
+                >What is the customer's preferred payment method:</label
+              >
+              <select class="form-control" id="paymentMethod">
+                <option>Electronic check</option>
+                <option>Credit card (automatic)</option>
+                <option>Mailed check</option>
+                <option>Bank transfer</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="phoneService"
+                >Does the customer have a phone service:</label
+              >
+              <select class="form-control" id="phoneService">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="seniorCitizen"
+                >Is the customer a senior Citizen:</label
+              >
+              <select class="form-control" id="seniorCitizen">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="streamMovies">Does the customer stream movies:</label>
+              <select class="form-control" id="streamMovies">
+                <option>No</option>
+                <option>Yes</option>
+                <option>No internet service</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="streamTV">Does the customer stream TV:</label>
+              <select class="form-control" id="streamTV">
+                <option>No</option>
+                <option>Yes</option>
+                <option>No internet service</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="techSupport"
+                >Does the customer require Tech Support:</label
+              >
+              <select class="form-control" id="techSupport">
+                <option>No</option>
+                <option>Yes</option>
+                <option>No internet service</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="deviceProtection"
+                >Does the customer require device protection:</label
+              >
+              <select class="form-control" id="deviceProtection">
+                <option>No</option>
+                <option>Yes</option>
+                <option>No internet service</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="totalCharges"
+                >What are the customer's total charges, so far:</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="totalCharges"
+                placeholder="Enter total charges"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Customer's gender:</label>
+              <select class="form-control" id="gender">
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tenure"
+                >For how many months has the customer been active:</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="tenure"
+                placeholder="Enter number of months"
+              />
+            </div>
+            <button type="submit" class="btn-submit">Predict</button>
+          </form>
+
+          <!-- Settings Dialog -->
+          <div id="settings-dialog" class="dialog hidden">
+            <div class="dialog-content">
+              <h3>Theme</h3>
+              <button id="dark-theme">Dark</button>
+              <button id="light-theme">Light</button>
+              <button id="settings-close">Close</button>
+            </div>
+          </div>
+
+          <!-- About Dialog -->
+          <div id="about-dialog" class="dialog hidden">
+            <div class="dialog-content">
+              <h3>About CustomWare</h3>
+              <p>
+                CustomWare is an AI-powered customer churn prediction
+                application. It uses a machine learning model to predict
+                customer churn based on various features. This helps businesses
+                to proactively retain their customers and improve their
+                services.
+              </p>
+              <button id="about-close">Close</button>
+            </div>
+          </div>
+
+          <!-- Error Dialog -->
+          <div id="error-dialog" class="dialog hidden">
+            <div class="dialog-content">
+              <h3>Error</h3>
+              <p id="error-message"></p>
+              <button id="error-close">Close</button>
+            </div>
+          </div>
+        </form>
+        ]
+      </main>
     </div>
     <div id="result"></div>
 
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>
