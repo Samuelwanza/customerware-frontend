@@ -114,13 +114,16 @@ async function predictChurn(data) {
 
     console.log(sams, "How it looks before");
     console.log(JSON.stringify(data), "After it has been stringified");
-    const res = await fetch("http://127.0.0.1:5000/predict_churn", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(sams),
-    })
+    const res = await fetch(
+      "https://web-production-ffc5.up.railway.app/predict_churn",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(sams),
+      }
+    )
       .then((res) => res.json())
       .then((data) => data.prediction);
     console.log(res);
