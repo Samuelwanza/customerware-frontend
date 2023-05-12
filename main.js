@@ -75,7 +75,7 @@ async function predictChurn(data) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(sams),
+        body: JSON.stringify(data),
       }
     )
       .then((res) => res.json())
